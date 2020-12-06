@@ -1,0 +1,34 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<slave>
+  <name>joza-pc</name>
+  <description></description>
+  <remoteFS>/home/joza/slave</remoteFS>
+  <numExecutors>1</numExecutors>
+  <mode>EXCLUSIVE</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.slaves.JNLPLauncher">
+    <workDirSettings>
+      <disabled>false</disabled>
+      <internalDir>remoting</internalDir>
+      <failIfWorkDirIsMissing>false</failIfWorkDirIsMissing>
+    </workDirSettings>
+    <webSocket>false</webSocket>
+  </launcher>
+  <label>linux ubuntu java1.8</label>
+  <nodeProperties>
+    <hudson.tools.ToolLocationNodeProperty>
+      <locations>
+        <hudson.tools.ToolLocationNodeProperty_-ToolLocation>
+          <type>hudson.plugins.git.GitTool$DescriptorImpl</type>
+          <name>2.29.2</name>
+          <home>/usr/bin/git</home>
+        </hudson.tools.ToolLocationNodeProperty_-ToolLocation>
+        <hudson.tools.ToolLocationNodeProperty_-ToolLocation>
+          <type>hudson.tasks.Maven$MavenInstallation$DescriptorImpl</type>
+          <name>3.6.3</name>
+          <home>/usr/share/maven</home>
+        </hudson.tools.ToolLocationNodeProperty_-ToolLocation>
+      </locations>
+    </hudson.tools.ToolLocationNodeProperty>
+  </nodeProperties>
+</slave>
